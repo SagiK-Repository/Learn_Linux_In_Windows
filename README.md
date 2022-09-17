@@ -4,7 +4,7 @@
 
 ### VMware
 
-- <img src="https://user-images.githubusercontent.com/66783849/190838258-9c73c73f-7660-45ae-b48f-64032e1f45f1.png" width="70%">
+- <img src="https://user-images.githubusercontent.com/66783849/190838258-9c73c73f-7660-45ae-b48f-64032e1f45f1.png" width="30%">
 - VMware 주식회사는 클라우드 컴퓨팅 및 가상화 소프트웨어를 판매하는 기업이다.
 - 다음 소프트 웨어를 공급한다.
   - VM웨어 워크스테이션(VMware Workstation)
