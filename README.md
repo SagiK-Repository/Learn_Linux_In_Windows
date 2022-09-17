@@ -1,5 +1,3 @@
-문서정보 : 2022.09.17. 작성, 작성자 [@SAgiKPJH](https://github.com/SAgiKPJH)
-
 # Linux in Window
 
 ## 1. Linux 설치
@@ -40,9 +38,28 @@
 - Ubuntu를 설치받아 VMware Player로 실행한다.
 - [Ubuntu 설치 사이트](https://ubuntu.com/desktop) > Download Ubuntu > Download 를 선택하여 iso를 다운받는다.
 
+<br><br>
+
 ## 2. VMware Player - Linux Ubuntu 실행
 
-- 
+- VMware Player > Create a New Virtual Machine > Installer disc image file (iso): > [Browser...] 버튼 선택 > 설치한 ubuntu.iso 선택 > [Next>] > 이름 및 비밀번호 작성 > [Next>] > Machine 이름 및 경로 지정 > [Next>] > 저장공간 부여 (본인 16GB로 설정) > Setting 확인 후 [Finish]
+- 지정한 Machine 이름의 Player 선택 후 Play한다.  
+  <img src="https://user-images.githubusercontent.com/66783849/190839290-2ae6c52e-0760-49bc-a7a1-0dc2e38cd826.png" width="70%">
+- Ubuntu가 실행이 되고, 요구하는 사항을 전부 입력하면 완료된다.  
+- 설치된 Ubuntu > 메뉴 > Terminal앱을 실행하여 Terminal 창을 연다.  
+  <img src="https://user-images.githubusercontent.com/66783849/190839639-86dab1b1-a015-49b0-a195-ea76f7e03170.png" width="50%">  
+  <img src="https://user-images.githubusercontent.com/66783849/190839671-5b860f73-c6fa-4d52-bb8a-444d74e1e906.png" width="50%">
+
+## 3. Linux 명령어
+
+- touch
+  - 0바이트 파일 생성, 파일의 날짜와 시간을 수정한다.
+  - 사용법
+    - touch filename : filename의 파일을 생성
+    - touch -c filename : filename의 시간을 현재시간으로 갱신
+    - touch -t 202110291608 filename : filename의 시간을 날짜 정보(YYYYMMDDhhmm)로 갱신
+    - (20211029160 => 2021.10.29.16:08)
+    - touch -r oldfile newfile  : newfile의 날짜 정보를 oldfile의 날짜 정보와 동일하게 변경
 
 # 참조
 
