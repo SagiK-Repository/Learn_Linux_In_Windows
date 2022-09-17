@@ -151,6 +151,24 @@
 - pwd(print working directory) : 현재 작업 디렉토리의 경로를 보여준다.
 
 
+### **mkdir (Make Dirctory)**
+
+- mkdir (Make Dirctory) : 디렉터리 생성
+  - mkdir dirname : dirname이라는 디렉터리 생성
+  - mkdir dir1 dir2: 한 번에 여러 개의 디렉터리 생성
+  - mkdir -p dirname/sub_dirname : dirname이라는 디렉터리 생성, sub_dirname이라는 하위 디렉터리도 생성
+  - mkdir -m 700 dirname : 특정 퍼미션(권한)을 갖는 디렉터리 생성
+8진수 | 2진수 | 권한 | 의미
+-- | -- | -- | --
+0 | 0 | --- | 아무 권한 없음
+1 | 1 | --x | 실행 권한만 있음
+2 | 10 | -w- | 쓰기 권한만 있음
+3 | 11 | -wx | 쓰기,실행 권한 있음
+4 | 100 | r-- | 읽기 권한만 있음
+5 | 101 | r-x | 쓰기,실행 권한 있음
+6 | 110 | rw- | 읽기,쓰기 권한 있음
+7 | 111 | rwx | 모든 권한 있음
+
 <br>
 
 # 참조
