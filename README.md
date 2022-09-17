@@ -52,14 +52,28 @@
 
 ## 3. Linux 명령어
 
-- touch
-  - 0바이트 파일 생성, 파일의 날짜와 시간을 수정한다.
-  - 사용법
-    - touch filename : filename의 파일을 생성
-    - touch -c filename : filename의 시간을 현재시간으로 갱신
-    - touch -t 202110291608 filename : filename의 시간을 날짜 정보(YYYYMMDDhhmm)로 갱신
-    - (20211029160 => 2021.10.29.16:08)
-    - touch -r oldfile newfile  : newfile의 날짜 정보를 oldfile의 날짜 정보와 동일하게 변경
+### 파일 생성
+
+#### touch
+
+- 0바이트 파일 생성, 파일의 날짜와 시간을 수정한다.
+- 사용법
+  - touch filename : filename의 파일을 생성
+  - touch file1 file2 file3 : 파일을 동시에 생성
+  - touch -c filename : filename의 시간을 현재시간으로 갱신 (change time)
+  - touch -t 202110291608 filename : filename의 시간을 날짜 정보(YYYYMMDDhhmm)로 갱신 (20211029160 => 2021.10.29.16:08)
+  - touch -d '2020-09-22 10:45:30' filename : 지정한 시간으로 접근 시간, 수정 시간이 수정되고, 변경시간은 현재 시간으로 수정된다.
+  - touch -r oldfile newfile  : newfile의 날짜 정보를 oldfile의 날짜 정보와 동일하게 변경
+  - touch -a filename : 현 시간으로 파일의 접근 시간, 변경 시간을 수정한다.
+  - touch -m filename : 파일을 생성, 수정시간을 서버 시간으로 갱신
+  - touch --help : 해당 명령어의 도움말을 보여주고 실행이 종료한다.
+  - touch --version : version 정보를 출력하고 실행이 종료한다.
+
+<br>
+
+#### vi
+
+- vi
 
 # 참조
 
