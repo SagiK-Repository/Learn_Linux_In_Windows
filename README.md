@@ -1,3 +1,5 @@
+문서정보 : 2022.09.17. 작성, 작성자 [@SAgiKPJH](https://github.com/SAgiKPJH)
+
 # Linux in Window
 
 ## 1. Linux 설치
