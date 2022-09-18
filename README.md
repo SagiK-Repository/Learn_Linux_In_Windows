@@ -49,6 +49,9 @@
 - 설치된 Ubuntu > 메뉴 > Terminal앱을 실행하여 Terminal 창을 연다.  
   <img src="https://user-images.githubusercontent.com/66783849/190839639-86dab1b1-a015-49b0-a195-ea76f7e03170.png" width="49%"> <img src="https://user-images.githubusercontent.com/66783849/190839671-5b860f73-c6fa-4d52-bb8a-444d74e1e906.png" width="49%">
 
+<br><br>
+
+
 ## 3. Linux 명령어
 
 - 파일
@@ -58,8 +61,19 @@
   - cd :디렉터리 이동 (Change directory)
   - pwd : 현재 작업 디렉토리의 경로를 보여준다. (print working directory)
   - mkdir : 디렉터리 생성한다. (Make Dirctory)
+  - rmdir : 디렉토리를 지운다. (Remove directory)
+  - rm : 파일을 삭제한다. (-r로 디렉터리 삭제) (Remove)
+  - cp : 파일 및 디렉터리를 복사한다. (Copy)
+  - mv : 파일 또는 디렉터리의 이름을 바꾸거나 위치를 이동한다. (Move)
+- 기타 명령어
+  - file : 파일의 종류를 알아본다.
+  - which : 명령어의 위치나 alias를 보여준다. 예) which ls -> /bin/ls
+  - whereis : 명령어의 소스, 실행 파일, 메뉴얼 페이지등의 위피를 알려준다.
+  - clear : 화면 초기화
 
-### 파일 생성
+<br>
+
+### 기본 명령어
 
 #### **touch**
 
@@ -126,7 +140,9 @@
   D -- q, 4!, w4 --> A_2
   ```
 
-### **ls (List segments)**
+<br>
+
+#### **ls (List segments)**
 
 - ls (List segments) : 현재 위치의 파일 목록 조회
   - ls -l : 파일의 상세정보
@@ -137,7 +153,9 @@
   - ls -SS : 용량순 정렬 (-SSr 오름차순, -h 용량 단위 표시)
   - 묶어서 활용 가능하다. 예) ls -al (숨김파일 포함 상세정보), ls -alSSrh (숨김파일 포함하여 용량정보 내림차순 정렬 상세정보) (폴더는 du 명령어를 통해 용량을 확인할 수 있다.)
 
-### **cd**
+<br>
+
+#### **cd**
 
 - cd (Change directory) :디렉터리 이동
   - cd [디렉터리 경로] : 이동하려는 디렉터리로 이동 (예 cd folder)
@@ -147,11 +165,15 @@
   - cd .. : 상위 디렉터리로 이동
   - cd - : 이전 경로로 이동
 
-### **pwd (print working directory)**
+<br>
+
+#### **pwd (print working directory)**
 
 - pwd(print working directory) : 현재 작업 디렉토리의 경로를 보여준다.
 
-### **mkdir (Make Dirctory)**
+<br>
+
+#### **mkdir (Make Dirctory)**
 
 - mkdir (Make Dirctory) : 디렉터리 생성
   - mkdir dirname : dirname이라는 디렉터리 생성
@@ -170,6 +192,92 @@
 5 | 101 | r-x | 쓰기,실행 권한 있음
 6 | 110 | rw- | 읽기,쓰기 권한 있음
 7 | 111 | rwx | 모든 권한 있음
+
+<br>
+
+#### **rmdir (remove directory)**
+
+- rmdir (remove directory) : 디렉터리 삭제
+  - rmdir dir1 : dir1이라는 디렉터리를 삭제한다.
+  - rmdir dir1 dir2 : 디렉터리 다중 생성
+  - rmdir -p dir1/dir2 : 상위 디렉터리도 함께 삭제된다.
+
+<br>
+
+#### **rm (remove)**
+
+- rm (Remove) : 파일 삭제
+  - rm file1 : file1을 삭제
+  - rm -f file1 : file1을 강제 삭제
+  - rm -r dir : dir 디렉터리 삭제 (디렉터리는 -r 옵션 없이 삭제 불가, 하위 내용 포함 삭제)
+  - rm -i dir : 파일마다 지울지 확인한다. 
+  - 예시 ) rm -ri dir1 > y > y > y > ...
+
+<br>
+
+#### **cat (Catenate)**
+
+- cat (Catenate) : 파일의 내용을 화면에 출력, 리다이렉션 기호('>')를 사용하여 새로운 파일 생성
+  - cat file1 : file1의 내용을 출력
+  - cat file1 file2 : file1과 file2의 내용을 출력
+  - cat file1 file2 | more : file1과 file2의 내용을 페이지별로 출력
+  - cat file1 file2 | head : file1과 file2의 내용을 처음부터 10번째 줄까지만 출력
+  - cat file1 file2 | tail : file1과 file2의 내용을 끝에서부터 10번째 줄까지만 출력
+  - '>' 기호 : 기존에 있는 파일 내용을 지우고 저장
+  - '>>' 기호 : 기존 파일 내용 뒤에 덧붙여서 저장
+  - '<' 기호 : 파일의 데이터를 명령에 입력
+  - cat file1 firle2 > file3 : file1, file2의 명령 결과를 합쳐서 file3라는 파일에 저장
+  - car file4 >> file3 : file3에 file4의 내용 추가
+  - cat < file1 : file1의 결과 출력
+  - cat < file1 > file2 : file1의 출력 결과를 file2에 저장
+
+<br>
+
+#### **cp (Copy)**
+
+- cp (Copy) : 파일 및 디렉터리 삭제
+  - cp file1 file2 : file1을 file2라는 이름으로 복사
+  - cp -f file1 file2 : 강제 복사 (같은 이름이 있으면 강제 붙여넣기 진행)
+  - cp -i file1 file2 : 복사할 대상 파일이 이미 존재할 때 덮어 쓸 것인지를 물어본다. (interactive)
+  - cp -b file file2 : 덮어쓰거나 지울 때 백업본 파일을 만든다. (file2~가 생성된다)
+  - cp -p file1 file2 : 소유권 허가권 시간정보를 유지 복사
+  - cp -r dir1 dir2 : 디렉터리 복사. 폴더 안의 모든 하위 경로와 파일들을 복사한다.
+  - 예) cp /etc/fstab .
+
+<br>
+
+#### **mv (move)**
+
+- mv : 파일 또는 디렉터리의 이름을 바꾸거나 위치를 이동한다.
+  - mv old_name new_name : old_name을 new_name로 변경한다.
+  - mv -f : 묻지 않고 덮어 쓴다. (force)
+  - mv -i : 덮어쓸지 묻는다.
+  - mv -b : 파일 지우기 전에 백업본을 만든다.
+  - mv file directory : 파일을 디렉터리로 옮긴다.
+
+<br>
+
+
+
+### 기타 명령어
+
+#### which : 명령어의 위치나 alias를 보여준다. 예) which ls -> bin/ls
+
+<br>
+
+#### whereis : 명령어의 소스, 실행 파일, 메뉴얼 페이지등의 위피를 알려준다.
+
+<br>
+
+#### file : 파일의 종류를 알아본다. ( 예 file file -> file : UTF-8 Unicode text )
+
+<br>
+
+#### clear : 화면 초기화
+
+<br>
+
+### 
 
 <br>
 
