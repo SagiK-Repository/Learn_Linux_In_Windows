@@ -55,8 +55,9 @@
   - touch : 0바이트 파일 생성, 파일의 날짜와 시간을 수정한다.
   - vi : 명령을 이용한 file 생성한다.
   - ls : 현재 위치의 파일 목록 조회
-  - cd : 
-  - pwd
+  - cd :디렉터리 이동 (Change directory)
+  - pwd : 현재 작업 디렉토리의 경로를 보여준다. (print working directory)
+  - mkdir : 디렉터리 생성한다. (Make Dirctory)
 
 ### 파일 생성
 
@@ -150,14 +151,14 @@
 
 - pwd(print working directory) : 현재 작업 디렉토리의 경로를 보여준다.
 
-
 ### **mkdir (Make Dirctory)**
 
 - mkdir (Make Dirctory) : 디렉터리 생성
   - mkdir dirname : dirname이라는 디렉터리 생성
   - mkdir dir1 dir2: 한 번에 여러 개의 디렉터리 생성
   - mkdir -p dirname/sub_dirname : dirname이라는 디렉터리 생성, sub_dirname이라는 하위 디렉터리도 생성
-  - mkdir -m 700 dirname : 특정 퍼미션(권한)을 갖는 디렉터리 생성
+  - mkdir -m 700 dirname : 특정 퍼미션(권한)을 갖는 디렉터리 생성 (각각 파일 소유자, 소유 그룹, 일반 사용자에게 부여) (모두에게 권한 부여 : 777)
+  - 다음과 같이 활용 가능하다. (예 mkdir -p dir1 dir2/dir2-1 dir2/dir2-2 dir3/dir3-1/dir3-1-1 )
 
 8진수 | 2진수 | 권한 | 의미
 -- | -- | -- | --
