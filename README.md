@@ -70,6 +70,8 @@
   - which : 명령어의 위치나 alias를 보여준다. 예) which ls -> /bin/ls
   - whereis : 명령어의 소스, 실행 파일, 메뉴얼 페이지등의 위피를 알려준다.
   - clear : 화면 초기화
+  - head : 앞에서 n줄 보여준다.
+  - tail : 뒤에서 n줄 보여준다.
 
 <br>
 
@@ -231,8 +233,6 @@
   - cat < file1 : file1의 결과 출력
   - cat < file1 > file2 : file1의 출력 결과를 file2에 저장
 
-<br>
-
 #### **cp (Copy)**
 
 - cp (Copy) : 파일 및 디렉터리 삭제
@@ -261,19 +261,53 @@
 
 ### 기타 명령어
 
-#### which : 명령어의 위치나 alias를 보여준다. 예) which ls -> bin/ls
+#### **which : 명령어의 위치나 alias를 보여준다. 예) which ls -> bin/ls**
 
 <br>
 
-#### whereis : 명령어의 소스, 실행 파일, 메뉴얼 페이지등의 위피를 알려준다.
+#### **whereis : 명령어의 소스, 실행 파일, 메뉴얼 페이지등의 위피를 알려준다.**
 
 <br>
 
-#### file : 파일의 종류를 알아본다. ( 예 file file -> file : UTF-8 Unicode text )
+#### **file : 파일의 종류를 알아본다. ( 예 file file -> file : UTF-8 Unicode text )**
 
 <br>
 
-#### clear : 화면 초기화
+#### **clear : 화면 초기화**
+
+<br>
+
+
+#### **head**
+
+- head : 파일의 첫 부분을 보여주는 명령. 텍스트 파일 앞에서 주어진 수 만큼의 행을 보여준다. (기본 10줄)
+  - head -3 file : file의 내용 3행만큼 보여준다.
+
+<br>
+
+#### **tail**
+
+- tail : head와 반대로 파일을 끝자리 부분을 보여준다. 주어진 개수만큼 줄을 버여준다.
+  - tail -3 file : file의 내용 뒤에서 3행만큼 보여준다.
+  - tail -3 -c file : 마지막 3바이트만 출력한다.
+  - tail -f file : 특정 파일의 끝 부분에 새로운 행이 추가될 경우, 실시간으로 출력한다. (log를 볼 때 유용)
+
+<br>
+
+#### **more**
+
+- more : 출력을 페이지 단위로 나누어 보여준다.
+  - f, SPACE : 다음 페이지를 보여준다.
+  - Enter : 한줄 씩 보여준다.
+  - q, Q : 종료
+  - b, ^B : 이전 페이지를 보여준다.
+  - /검색어 : 검색어에 해당하는 단어를 검색한다.
+  - = : 현재 line을 보여준다.
+  - :f : 현재 파일의 이름과 현재 line number를 보여준다.
+
+<br>
+
+#### ** **
 
 <br>
 
