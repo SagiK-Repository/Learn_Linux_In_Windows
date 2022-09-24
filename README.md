@@ -66,6 +66,7 @@
   - cat (Catenate) : 파일의 내용을 화면에 출력, 리다이렉션 기호('>')를 사용하여 새로운 파일 생성
   - cp : 파일 및 디렉터리를 복사한다. (Copy)
   - mv : 파일 또는 디렉터리의 이름을 바꾸거나 위치를 이동한다. (Move)
+  - echo : 한 줄을 표시한다.
 - 기타 명령어
   - 파일
     - file : 파일의 종류를 알아본다.
@@ -103,6 +104,7 @@
     - logname : 현재 사용자의 로그인 유저명을 표시한다. (root 무상관)
     - last : 유저의 로그인 이력을 출력한다.
     - lastlog : 유저의 마지막 로그인 기록을 표시한다.
+    - uptime : 현재 로그인한 후의 총 시간과 시스템 사용 현황을 보여 준다.
   - 부팅
     - dmesg : 부팅시 커널에 출력되는 상태 정보를 볼 수 있도록 하는 프로그램이다.
   - 프로세스
@@ -113,6 +115,9 @@
     - killall : 같은 데몬의 여러 프로세스를 한번에 종료한다.
     - top : 현재 시스템의 프로세스 상태를 실시간으로 화면에 보여준다.
     - jobs : 백그라운드로 실행중인 프로세스나 현재 중지된 프로세스의 목록을 출력해주는 명령어
+    - renice : 실행중인 프로세스의 우선순위를 변결할 때 사용하는 명령이다.
+    - pidof : 실행중인 특정 프로그램의 프로세스 ID를 출력한다.
+    - pkill : 특정 프로세스에 signal을 보낸다.
 - 중급 명령어
   - 문서 가공
     - expand : space to tab (expend -t 3 filename)
@@ -126,6 +131,19 @@
   - 동작
     - sleep : 잠쉬 쉬게 하는 명령어
     - clock : cmos에 설정된 시간이나 값을 보여주거나 변경한다.
+  - 특정 동작
+    - procinfo : /proc 디렉토리의 내용을 화면에 보여준다.
+  - 환경
+    - env : 프로그램을 다른 환경에서 실행한다.
+    - source : 현재 셸 환경에서 주어진 파일을 읽어서 실행
+  - 네트워크
+    - stty : 터미널 라인 설정을 변화/출력
+- 고급 명령어
+  - 소유자
+    - chown : 파일의 소유자를 바꾼다. (이 명령은 root가 아닌경우 제약이 많다.) (change owner)
+    - chgrp : 파일의 소유그룹을 변경한다.
+  - 특정 동작
+    - watch : 화면에 출력하지 않고 프로그램을 주기적으로 실행한다.
 
 <br>
 
@@ -818,15 +836,117 @@
 
 <br>
 
-#### ** **
+#### **renice**
+
+- renice : 실행중인 프로세스의 우선순위를 변결할 때 사용하는 명령이다.
+  - 프로세스와 그 소유자와 루트 권한자만이 명령을 내릴 수 있다.
+  - 명형도 NI값을 부여함으로써 수선순위가 변경되며, nice와 같이 -21~19 사이의 값을 부여한다.
+  - renice options 값 PID
+    - options
+      - -r : 그룹의 ID 지정
+      - -u : 사용자 ID 지정
+      - -p : 프로세스 ID 지정
 
 <br>
 
-#### ** **
+#### **nohup**
+
+- nohup : 사용자가 로그아웃하거나 터미널 창을 닫아도 해당 프로세스를 백그라운드로 작업될 수 있도록 해주는 명령어이다.
+  - nohup [명령]
 
 <br>
 
-#### ** **
+#### **pidof**
+
+- pidof : 실행중인 특정 프로그램의 프로세스 ID를 출력한다.
+  - pidof 프로그램명
+  - 예) pidof httpd
+
+<br>
+
+#### **uptime**
+
+- uptime : 현재 로그인한 후의 총 시간과 시스템 사용 현황을 보여 준다.
+
+<br>
+
+
+
+#### **procinfo**
+
+- procinfo : /proc 디렉토리의 내용을 화면에 보여준다.
+
+<br>
+
+#### **echo**
+
+- echo : 한 줄을 표시한다.
+  - echo -n wow : 마지막에 개행문자 없이 wow를 출력한다.
+  - echo -e wom : 문자열에서 다음 백슬래시로 이스테이프된 문자의 번역을 하도록 한다.
+
+<br>
+
+#### **env**
+
+- env : 프로그램을 다른 환경에서 실행한다.
+  - env[-]  [-i] [-u   name] [--ignore-environment] [--unset=name] [--help] [--version] [name=값]... [명령 [인수...]] 
+  - [options]
+    - -u : 만약 존재한다면 환경으로부터 name 변수를 제거한다.
+    - -i, - : 상속된 환경을 무시하고 텅 빈 환경에서 시작한다.
+
+<br>
+
+#### **source**
+
+- source : 현재 셸 환경에서 주어진 파일을 읽어서 실행
+  - source filename : 파일을 읽어서 실행한다.
+
+<br>
+
+#### **stty**
+
+- stty : 터미널 라인 설정을 변화/출력
+  - stty [-a,--all,-g,--help,--save,--version] 
+
+
+<br>
+
+#### **pkill**
+
+- pkill : 특정 프로세스에 signal을 보낸다.
+  - pkill [-signal] [-fnvx] [-P ppid,...] [-g pgrp,...]  [-s sid,...] [-u euid,...] [-U uid,...] [-G  gid,...] [-t term,...] [pattern] 
+
+
+<br>
+
+### 고급 명령어
+
+#### **chown**
+
+- chown : 파일의 소유자를 바꾼다. (이 명령은 root가 아닌경우 제약이 많다.) (change owner)
+  - chown [options] [newowner] file(s)
+    - [options]
+      - -R : 서브 디렉토리까지 설정된다.
+
+<br>
+
+#### **chgrp**
+
+- chgrp : 파일의 소유그룹을 변경한다.
+  - chown [option] newgorup file(s)
+    - [options]
+      - -R : 서브 디렉토리까지 설정된다.
+
+
+<br>
+
+#### **watch**
+
+- watch : 화면에 출력하지 않고 프로그램을 주기적으로 실행한다.
+  - watch [-dhv] [-n  <seconds>]  [--differences[=cumulative]] [--help] [--interval=<seconds>] [--version] <command> 
+    - [options]
+      - -n : 인터벌을 주기로 프로그램을 실행시킨다.
+
 
 <br>
 
