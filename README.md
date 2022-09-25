@@ -144,6 +144,17 @@
     - chgrp : 파일의 소유그룹을 변경한다.
   - 특정 동작
     - watch : 화면에 출력하지 않고 프로그램을 주기적으로 실행한다.
+  - 동기화
+    - sync : 메모리를 디스크 자료와 동기화 한다.
+  - 네트워크
+    - reset : 터미널을 초기화한다.
+    - ifconfig : 네트워크 인터페이스를 설정된다.
+    - ping : 외부 네트워크와 연결이 정상적으로 이루어졌는지 확인하는 명령이다.
+    - netstat : 네트워크의 상태, routing table, 인터페이스 통계등의 상태를 출력한다.
+    - ftp : 인터넷 파일 전송 프로그램이다.
+    - telnet : telnet TELNET 프로토콜을 이용한 사용자 인터페이스
+    - rlogin : 원격 로그인을 한다.
+    - rcp : 원격 파일 복사.
 
 <br>
 
@@ -950,10 +961,125 @@
 
 <br>
 
+#### **sync**
+
+- sync : 메모리를 디스크 자료와 동기화 한다.
+
+<br>
+
+
+#### **reset**
+
+- reset : 터미널을 초기화한다.
+  - reset [-IQVqrs] [-] [-e ch] [-i ch] [-k ch]  [-m  mapping]  [terminal] 
+
+<br>
+
+#### **ifconfig**
+
+- ifconfig : 네트워크 인터페이스를 설정된다.
+  - ifconfig [ interface ] 
+  - ifconfig eth0 : Eth0로 지정된 네트워크 장치의 IP address, NetMask, Broadcast 등의 정보를 출력한다.
+  - ifconfig eth0 down : 현재 장동중인 네트워크 장치 eth0를 중지한다.
+  - ifconfig eth0 210.119,33,193 netmask 255.255.255.0 up
+    - IP address를 210.119.33.193로 부여하고, Netmask 는 255.255.255.0을 사용하도록 eth0을 활성화
+
+
+<br>
+
+#### **ping**
+
+- ping : 외부 네트워크와 연결이 정상적으로 이루어졌는지 확인하는 명령이다.
+  - ping -b 192.168.1.255 : Broadcast에 packet을 전송한다.
+  - ping -c 3 192.168.0.1 : Host에 packet를 3번 전송한다.
+  - ping -i 2 192.168.10.12 : Host에 packet을 전송하되, 간격은 2초에 한 번씩으로 설정한다.
+
+<br>
+
+#### **netstat**
+
+- netstat : 네트워크의 상태, routing table, 인터페이스 통계등의 상태를 출력한다.
+  - [options]
+    - -r : routing table을 출력한다.
+    - -i : 모든 네트워크 인터페이스 정보를 출력한다.
+    - -n : 주소를 숫자로 출력한다.
+    - -p : PID와 프로그램 이름을 출력한다.
+    - -ㅣ : listening 상태인 소켓 정보만 출력한다.
+    - -a : listening & non listening 소켓 모두 출력한다.
+    - -u : udp 프로토콜을 사용하는 소켓만 출력한다.
+    - -t : tcp 프로토콩을 사용하는 소켓만 출력한다.
+    - netstat -vattcp : 프로토콜을 사용하는 서비스들과 그 상태를 출력한다.
+    - netstat -vauudp : 프로토콜을 사용하는 서비스들과 그 상태를 출력한다.
+    - netstat –taptcp : 프로토콜을 사용하는 서브스들과 그 상태, PID, 프로그램 이름정보를 출력한다.
+    - netstat –rn : route –n 명령과 비슷한 결과를 출력
+
+<br>
+
+#### **ftp**
+
+- ftp : 인터넷 파일 전송 프로그램이다.
+  - ftp [-pinegvd] [host] 
+  - 예) ftp ubilab.sunmoon.ac.kr
+
+<br>
+
+#### **telnet**
+
+- telnet : telnet TELNET 프로토콜을 이용한 사용자 인터페이스 
+  - telnet [-d] [-a] [-n  추적파일] [-e escape문자] [[-l 사용자ID] 호스트 [포트]] 
+  - 예) telnet ubilab.sunmoon.ac.kr
+
+<br>
+
+#### **rlogin**
+
+- rlogin : 원격 로그인을 한다.
+  - rlogin [-8EKLdx] [-e char] [-l username] host 
+  - -l : 다른 id를 사용하여 로그인하기 위해서는 -l 옵션을 사용한다.
+
+<br>
+
+#### **rcp**
+
+- rcp : 원격 파일 복사
+  - rcp [-px] file1 file2 
+  - rcp [-px] [-r] file ... directory 
+  - [options]
+    - -p : 원본 파일의 변경날짜와 모드를 유지하여 복사한다.
+    - -x : 호스트 간의 모든 정보 전달을 DES 암호화한다.
+    - -r : 디렉토리 내의 하위 디렉토리와 파일을 로컬 시스템으로 복사한다.
+    - -D : 지정한 포트로 접속한다.
+
+
+<br>
+
 #### ** **
 
 <br>
 
+#### ** **
+
+<br>
+
+#### ** **
+
+<br>
+
+#### ** **
+
+<br>
+
+#### ** **
+
+<br>
+
+#### ** **
+
+<br>
+
+#### ** **
+
+<br>
 
 ## 4. Linux 파일과 디렉토리
 
