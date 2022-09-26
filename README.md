@@ -1087,7 +1087,7 @@
 
 <br>
 
-#### **uname **
+#### **uname**
 
 - uname : 시스템의 정보를 출력해주는 명령이다.
   - OS의 버전이나 vender, machine type등을 알 수 있다. 
