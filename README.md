@@ -54,7 +54,7 @@
 
 ## 3. Linux 명령어
 
-- 기초 명령어
+### 기초 명령어
   - touch : 0바이트 파일 생성, 파일의 날짜와 시간을 수정한다.
   - vi : 명령을 이용한 file 생성한다.
   - ls : 현재 위치의 파일 목록 조회
@@ -67,7 +67,10 @@
   - cp : 파일 및 디렉터리를 복사한다. (Copy)
   - mv : 파일 또는 디렉터리의 이름을 바꾸거나 위치를 이동한다. (Move)
   - echo : 한 줄을 표시한다.
-- 기타 명령어
+
+<br>
+
+### 기타 명령어
   - 파일
     - file : 파일의 종류를 알아본다.
   - 명령
@@ -120,7 +123,10 @@
     - pidof : 실행중인 특정 프로그램의 프로세스 ID를 출력한다.
     - pkill : 특정 프로세스에 signal을 보낸다.
     - fuser : 사용중인 프로세스의 소유자를 보여주거나 신호를 보낸다.
-- 중급 명령어
+
+<br>
+
+### 중급 명령어
   - 문서 가공
     - expand : space to tab (expend -t 3 filename)
     - expand : tab to space (unexpend -t 3 filename)
@@ -140,7 +146,10 @@
     - source : 현재 셸 환경에서 주어진 파일을 읽어서 실행
   - 네트워크
     - stty : 터미널 라인 설정을 변화/출력
-- 고급 명령어
+
+<br>
+
+### 고급 명령어
   - 소유자
     - chown : 파일의 소유자를 바꾼다. (이 명령은 root가 아닌경우 제약이 많다.) (change owner)
     - chgrp : 파일의 소유그룹을 변경한다.
@@ -178,6 +187,8 @@
 <br>
 
 ### 기본 명령어
+
+<details> <summary>기본 명령어</summary>
 
 #### **touch**
 
@@ -360,8 +371,13 @@
 <br>
 
 
+ </details> 
+
+<br>
 
 ### 기타 명령어
+
+<details> <summary>기타 명령어</summary>
 
 #### **which : 명령어의 위치나 alias를 보여준다. 예) which ls -> bin/ls**
 
@@ -588,9 +604,14 @@
 - apropos : whatis DB를 검색하여 검색하는 명령어와 관련이 있는 명령어를 간단히 설명과 보여준다.
   - apropos jpeg : jpeg와 관련된 명령어 whatis와 같이 보여준다.
 
+</details> 
+
+
 <br><br>
 
 ### 중급 명령어
+
+<details> <summary>중급 명령어</summary> 
 
 #### **expand**
 
@@ -947,9 +968,14 @@
   - pkill [-signal] [-fnvx] [-P ppid,...] [-g pgrp,...]  [-s sid,...] [-u euid,...] [-U uid,...] [-G  gid,...] [-t term,...] [pattern] 
 
 
+</details> 
+
+
 <br>
 
 ### 고급 명령어
+
+<details> <summary>고급 명령어</summary>
 
 #### **chown**
 
@@ -1270,6 +1296,7 @@
     - -c : ASCII값으로 출력한다.
     - -f : floating point(부동소수점 형태)로 출력한다.
 
+</details> 
 
 <br>
 
